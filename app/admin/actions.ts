@@ -1,6 +1,6 @@
 "use server";
 
-import prisma from "../../lib/prisma"; // Ανέβηκα 2 επίπεδα, από το app/admin
+import prisma from "../lib/prisma"; // Ανέβηκα 2 επίπεδα, από το app/admin
 import { revalidatePath } from "next/cache";
 import { put, del } from "@vercel/blob";
 import bcrypt from "bcryptjs";
