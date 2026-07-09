@@ -18,7 +18,6 @@ import {
   X,
   Star,
   Globe,
-  Instagram,
 } from "lucide-react";
 
 export default function ClientHome({
@@ -353,9 +352,6 @@ export default function ClientHome({
               <Phone size={18} /> +30 210 1234567
             </span>
             <span className="hidden sm:block text-zinc-400">|</span>
-            <span className="flex items-center gap-2 text-zinc-800">
-              <Instagram size={18} /> @urbanfade_official
-            </span>
           </motion.div>
         </div>
       </section>
@@ -630,7 +626,7 @@ export default function ClientHome({
                 <p>+30 210 1234567</p>
               </div>
               <div className="flex items-center gap-4">
-                <Instagram className="text-white" />
+                //12
                 <span className="hover:text-white transition-colors cursor-pointer">
                   @urbanfade_official
                 </span>
