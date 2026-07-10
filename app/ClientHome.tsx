@@ -18,7 +18,28 @@ import {
   X,
   Star,
   Globe,
+  // Αφαιρέσαμε το Instagram από εδώ για να μην χτυπάει!
 } from "lucide-react";
+
+// --- CUSTOM INSTAGRAM ICON (Ίδιο στυλ με τα Lucide) ---
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+  </svg>
+);
 
 export default function ClientHome({
   services,
@@ -31,7 +52,7 @@ export default function ClientHome({
 }) {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [lang, setLang] = useState<"el" | "en">("en"); // Default σε Αγγλικά για SaaS Portfolio
+  const [lang, setLang] = useState<"el" | "en">("en");
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -352,6 +373,9 @@ export default function ClientHome({
               <Phone size={18} /> +30 210 1234567
             </span>
             <span className="hidden sm:block text-zinc-400">|</span>
+            <span className="flex items-center gap-2 text-zinc-800">
+              <InstagramIcon size={18} /> @urbanfade_official
+            </span>
           </motion.div>
         </div>
       </section>
@@ -625,7 +649,9 @@ export default function ClientHome({
                 <Phone className="text-white" />
                 <p>+30 210 1234567</p>
               </div>
+
               <div className="flex items-center gap-4">
+                <InstagramIcon className="text-white" size={24} />
                 <span className="hover:text-white transition-colors cursor-pointer">
                   @urbanfade_official
                 </span>
@@ -655,16 +681,15 @@ export default function ClientHome({
             id="map"
             className="w-full h-[400px] md:h-full md:grayscale md:hover:grayscale-0 grayscale-0 transition-all duration-500 bg-zinc-900 flex items-center justify-center"
           >
-            {/* Placeholder για τον χάρτη - Επειδή δεν έχουμε πραγματική διεύθυνση */}
-            <div className="text-center p-6 border border-zinc-800 rounded-xl bg-zinc-950/50">
-              <MapPin className="mx-auto text-zinc-600 mb-3" size={40} />
-              <p className="text-zinc-500 font-medium">
-                Interactive Map Placeholder
-              </p>
-              <p className="text-zinc-600 text-sm mt-1">
-                12 Tech Avenue, Athens
-              </p>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.965706489432!2d23.72574921532321!3d37.97353457972379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd1a0ad14323%3A0xe160bf0de21f1e00!2sSyntagma%20Square!5e0!3m2!1sen!2sgr!4v1689000000000!5m2!1sen!2sgr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
