@@ -626,7 +626,6 @@ export default function ClientHome({
                 <p>+30 210 1234567</p>
               </div>
               <div className="flex items-center gap-4">
-                //12
                 <span className="hover:text-white transition-colors cursor-pointer">
                   @urbanfade_official
                 </span>
