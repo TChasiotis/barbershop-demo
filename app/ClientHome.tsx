@@ -18,10 +18,9 @@ import {
   X,
   Star,
   Globe,
-  // Αφαιρέσαμε το Instagram από εδώ για να μην χτυπάει!
 } from "lucide-react";
 
-// --- CUSTOM INSTAGRAM ICON (Ίδιο στυλ με τα Lucide) ---
+// --- CUSTOM INSTAGRAM ICON ---
 const InstagramIcon = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -137,16 +136,16 @@ export default function ClientHome({
 
   const currentT = t[lang];
 
-  // High Quality Dummy Images from Unsplash
+  // Χρήση των τοπικών screenshots για την Gallery
   const galleryImages =
     gallery && gallery.length > 0
       ? gallery.map((img: any) => img.url)
       : [
-          "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80",
-          "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80",
-          "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80",
-          "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
-          "https://images.unsplash.com/photo-1520638024227-24838b000b25?w=800&q=80",
+          "/scshots/scshot1.jpg",
+          "/scshots/scshot2.jpg",
+          "/scshots/scshot3.jpg",
+          "/scshots/scshot4.jpg",
+          "/scshots/scshot5.jpg",
         ];
 
   // Dummy Reviews
@@ -196,11 +195,19 @@ export default function ClientHome({
         style={{ scaleX }}
       />
 
+      {/* BACKGROUND IMAGES */}
       <div className="fixed top-0 left-0 w-full h-screen z-0 bg-zinc-900">
+        {/* Desktop Hero Image */}
         <img
-          src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1600&q=80"
-          alt="Hero Background"
-          className="w-full h-full object-cover object-center opacity-60"
+          src="/hero/hero_desktop.jpg"
+          alt="Hero Background Desktop"
+          className="hidden md:block w-full h-full object-cover object-center opacity-60"
+        />
+        {/* Mobile Hero Image */}
+        <img
+          src="/hero/hero_mobile.jpg"
+          alt="Hero Background Mobile"
+          className="block md:hidden w-full h-full object-cover object-center opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-zinc-50/90"></div>
       </div>
@@ -222,8 +229,14 @@ export default function ClientHome({
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 h-full w-64 bg-white z-[80] shadow-2xl flex flex-col px-6 py-8"
             >
-              <div className="flex justify-between items-center mb-8 border-b border-zinc-100 pb-5">
+              <div className="flex justify-between items-start mb-8 border-b border-zinc-100 pb-5">
                 <div className="flex flex-col">
+                  {/* Πλαϊνό Μενού Λογότυπο */}
+                  <img
+                    src="/logo/logo.png"
+                    alt="Urban Fade Logo"
+                    className="h-10 w-auto object-contain mb-3"
+                  />
                   <span className="text-xl font-black tracking-tighter text-zinc-950">
                     URBAN FADE
                   </span>
@@ -233,7 +246,7 @@ export default function ClientHome({
                 </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-zinc-400 hover:text-zinc-900 p-1 -mr-2 transition-colors"
+                  className="text-zinc-400 hover:text-zinc-900 p-1 -mr-2 transition-colors mt-2"
                 >
                   <X size={28} />
                 </button>
@@ -324,10 +337,13 @@ export default function ClientHome({
             <Menu size={28} />
           </button>
 
+          {/* Λογότυπο Κεντρικού Navbar */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-            <span className="text-2xl font-black tracking-tighter text-zinc-950">
-              URBAN FADE
-            </span>
+            <img
+              src="/logo/logo.png"
+              alt="Urban Fade Logo"
+              className="h-8 md:h-12 w-auto object-contain"
+            />
           </div>
 
           <div className="flex items-center gap-3 z-10">
