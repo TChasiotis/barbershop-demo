@@ -233,7 +233,7 @@ export default function ClientHome({
                 <div className="flex flex-col">
                   {/* Πλαϊνό Μενού Λογότυπο */}
                   <img
-                    src="/logo/logo_remove.bg.png"
+                    src="/logo/logo_removebg.png"
                     alt="Urban Fade Logo"
                     className="h-10 w-auto object-contain mb-3"
                   />
@@ -340,7 +340,7 @@ export default function ClientHome({
           {/* Λογότυπο Κεντρικού Navbar */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
             <img
-              src="/logo/logo.png"
+              src="/logo/logo_removebg.png"
               alt="Urban Fade Logo"
               className="h-8 md:h-12 w-auto object-contain"
             />
